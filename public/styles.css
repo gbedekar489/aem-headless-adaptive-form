@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.form-card {
+  background: white;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 20px
+    rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.intro {
+  color: #667085;
+  margin-bottom: 32px;
+}
+
+.form-panel {
+  margin-top: 32px;
+  padding-top: 8px;
+}
+
+.form-panel h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+}
+
+.error {
+  color: #b42318;
+  margin-bottom: 20px;
+}
+.form-loader {
+  margin-bottom: 28px;
+}
+
+.form-loader label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-url-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-url-row input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.form-url-row button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-url-help {
+  margin-top: 8px;
+  color: #667085;
+  font-size: 14px;
+}
+
+.separator {
+  margin: 28px 0;
+  border: 0;
+  border-top: 1px solid #e4e7ec;
+}
+.unsupported-field {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px dashed #d0d5dd;
+  border-radius: 6px;
+  color: #667085;
+  background: #f9fafb;
+}

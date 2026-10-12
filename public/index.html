@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    AEM Forms Headless Demo
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/styles.css"
+  >
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="form-card">
+
+      <h1>
+        AEM Forms Headless Demo
+      </h1>
+
+      <p class="intro">
+        Enter the URL of a published AEM Adaptive Form
+        to render it using this headless application.
+      </p>
+
+
+      <!-- Adaptive Form URL -->
+
+      <div class="form-loader">
+
+        <label for="form-url">
+          AEM Adaptive Form URL
+        </label>
+
+        <div class="form-url-row">
+
+          <input
+            type="url"
+            id="form-url"
+            placeholder="https://publish.example.adobeaemcloud.com/adobe/forms/af/FORM_ID"
+          >
+
+          <button
+            type="button"
+            id="load-form-button"
+          >
+            Load Form
+          </button>
+
+        </div>
+
+        <p class="form-url-help">
+          Enter the URL of a published AEM Adaptive Form.
+        </p>
+
+      </div>
+
+
+      <hr class="separator">
+
+
+      <!-- Adaptive Form -->
+
+      <h1 id="form-title">
+        Adaptive Form
+      </h1>
+
+      <div
+        id="loading"
+        style="display: none;"
+      >
+        Loading form...
+      </div>
+
+      <div
+        id="error"
+        class="error"
+      ></div>
+
+      <form
+        id="adaptive-form"
+      ></form>
+
+    </div>
+
+  </main>
+
+  <script src="/adaptive-form.js"></script>
+
+</body>
+
+</html>
