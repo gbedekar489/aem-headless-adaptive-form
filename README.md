@@ -110,6 +110,86 @@ The sample currently demonstrates rendering of:
 - Drop-down lists
 
 Additional Adaptive Form component types can be supported by extending the client-side `renderField()` function.
+## Finding the Adaptive Form URL
+
+The application requires the URL of a **published AEM Adaptive Form**.
+
+A published Adaptive Form can be accessed using the following URL pattern:
+
+```text
+https://<aem-publish-host>/adobe/forms/af/<FORM_ID>
+```
+
+For example:
+
+```text
+https://publish-<program>-<environment>.adobeaemcloud.com/adobe/forms/af/<FORM_ID>
+```
+
+### Listing Published Adaptive Forms
+
+AEM Forms provides the `listforms` endpoint to retrieve the Adaptive Forms available on the Publish instance:
+
+```text
+https://<aem-publish-host>/adobe/forms/af/listforms
+```
+
+The response contains an `items` array with information about the available forms:
+
+```json
+{
+  "items": [
+    {
+      "id": "<FORM_ID>",
+      "path": "/content/forms/af/example/myform",
+      "title": "My Form"
+    }
+  ],
+  "cursor": "<CURSOR>"
+}
+```
+
+Use the `id` of the desired form to construct the URL used by this sample:
+
+```text
+https://<aem-publish-host>/adobe/forms/af/<FORM_ID>
+```
+
+### Pagination
+
+The `listforms` API may return only a subset of the available forms.
+
+When additional results are available, the response contains a `cursor`. Pass the returned cursor to the next request:
+
+```text
+https://<aem-publish-host>/adobe/forms/af/listforms?cursor=<CURSOR>
+```
+
+Continue using the cursor returned by each response until you locate the desired form.
+
+> The form must be published and accessible from the AEM Publish instance for this sample to retrieve and render it.
+
+## Running the Sample
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the application:
+
+```bash
+node server.js
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Paste the published Adaptive Form URL obtained above into the **AEM Adaptive Form URL** field and select **Load Form**.
 
 ## Running the Sample
 
