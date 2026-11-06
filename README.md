@@ -189,7 +189,7 @@ Open:
 http://localhost:3000
 ```
 
-Paste the published Adaptive Form URL obtained above into the **AEM Adaptive Form URL** field and select **Load Form**.
+Enter the URL of a published AEM Adaptive Form. The application automatically converts the form's repository path into the Base64-encoded Form ID required by the AEM Forms headless API.
 
 ## Running the Sample
 
