@@ -114,18 +114,52 @@ Additional Adaptive Form component types can be supported by extending the clien
 
 The application requires the URL of a **published AEM Adaptive Form**.
 
-A published Adaptive Form can be accessed using the following URL pattern:
+Users can provide the standard AEM Adaptive Form URL using the following format:
 
 ```text
-https://<aem-publish-host>/adobe/forms/af/<FORM_ID>
+https://<aem-publish-host>/content/forms/af/<folder>/<form-name>
 ```
 
 For example:
 
 ```text
-https://publish-<program>-<environment>.adobeaemcloud.com/adobe/forms/af/<FORM_ID>
+https://publish-<program>-<environment>.adobeaemcloud.com/content/forms/af/bankingforms/registrationform
 ```
 
+The Node.js application automatically extracts the Adaptive Form's repository path, converts it into a Base64-encoded Form ID, and constructs the appropriate AEM Forms API endpoint.
+
+**No manual encoding or Form ID lookup is required.**
+
+### How the URL is processed
+
+```text
+Published Adaptive Form URL
+          |
+          v
+Extract repository path
+/content/forms/af/bankingforms/registrationform
+          |
+          v
+Convert path to Base64
+          |
+          v
+Construct AEM Forms API URL
+/adobe/forms/af/{encodedFormId}
+          |
+          v
+Retrieve Adaptive Form JSON
+          |
+          v
+Render the form dynamically
+```
+
+### Loading the Form
+
+Enter the published Adaptive Form URL in the application's **AEM Adaptive Form URL** field and click **Load Form**.
+
+The application retrieves the form definition from AEM Forms and dynamically renders the supported components using HTML and JavaScript.
+
+> **Note:** The Adaptive Form must be published and accessible from the AEM Publish instance.
 ### Listing Published Adaptive Forms
 
 AEM Forms provides the `listforms` endpoint to retrieve the Adaptive Forms available on the Publish instance:
